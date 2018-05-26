@@ -13,6 +13,7 @@ Begin VB.Form login
    ScaleWidth      =   6615
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command1 
+      BackColor       =   &H000080FF&
       Caption         =   "EXIT"
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"

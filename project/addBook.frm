@@ -16,6 +16,15 @@ Begin VB.Form addBook
    WindowState     =   2  'Maximized
    Begin VB.TextBox Text1 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   9960
       TabIndex        =   15
@@ -25,6 +34,15 @@ Begin VB.Form addBook
    Begin VB.CommandButton Command2 
       BackColor       =   &H000000FF&
       Caption         =   "Click To Upload"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   9960
       Style           =   1  'Graphical
@@ -56,66 +74,152 @@ Begin VB.Form addBook
       Top             =   1080
    End
    Begin VB.CommandButton cmdUpdate 
+      BackColor       =   &H0000FF00&
       Caption         =   "Update"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   9720
+      Style           =   1  'Graphical
       TabIndex        =   23
       Top             =   7800
       Visible         =   0   'False
       Width           =   1935
    End
    Begin VB.CommandButton cmdCancel 
+      BackColor       =   &H00FFFF00&
       Caption         =   "Cancel"
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   7200
+      Style           =   1  'Graphical
       TabIndex        =   22
       Top             =   7800
       Visible         =   0   'False
       Width           =   1815
    End
    Begin VB.CommandButton cmdSave 
+      BackColor       =   &H00FF00FF&
       Caption         =   "Save"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   2160
+      Style           =   1  'Graphical
       TabIndex        =   21
       Top             =   7800
       Visible         =   0   'False
       Width           =   1935
    End
    Begin VB.CommandButton cmdEdit 
+      BackColor       =   &H000080FF&
       Caption         =   "&Edit"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   9720
+      Style           =   1  'Graphical
       TabIndex        =   20
       Top             =   7800
       Width           =   1935
    End
    Begin VB.CommandButton cmdClose 
+      BackColor       =   &H000080FF&
       Caption         =   "Close"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   7200
+      Style           =   1  'Graphical
       TabIndex        =   19
       Top             =   7800
       Width           =   1815
    End
    Begin VB.CommandButton cmdDel 
+      BackColor       =   &H00FF0000&
       Caption         =   "Delete"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   4680
+      Style           =   1  'Graphical
       TabIndex        =   18
       Top             =   7800
       Width           =   1815
    End
    Begin VB.CommandButton cmdAdd 
+      BackColor       =   &H0000FFFF&
       Caption         =   "&Add"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   2160
+      Style           =   1  'Graphical
       TabIndex        =   17
       Top             =   7800
       Width           =   1935
    End
    Begin VB.TextBox Text12addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   3360
       TabIndex        =   5
@@ -196,7 +300,7 @@ Begin VB.Form addBook
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"
-         Size            =   14.25
+         Size            =   11.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -213,7 +317,7 @@ Begin VB.Form addBook
       Alignment       =   2  'Center
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"
-         Size            =   14.25
+         Size            =   11.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -227,6 +331,15 @@ Begin VB.Form addBook
       Width           =   2175
    End
    Begin VB.TextBox Text8addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   9960
       TabIndex        =   12
@@ -234,6 +347,15 @@ Begin VB.Form addBook
       Width           =   2175
    End
    Begin VB.TextBox Text7addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   9960
       TabIndex        =   11
@@ -241,6 +363,15 @@ Begin VB.Form addBook
       Width           =   2175
    End
    Begin VB.TextBox Text6addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   3360
       TabIndex        =   9
@@ -248,6 +379,15 @@ Begin VB.Form addBook
       Width           =   2415
    End
    Begin VB.TextBox Text5addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   3360
       TabIndex        =   8
@@ -255,6 +395,15 @@ Begin VB.Form addBook
       Width           =   2415
    End
    Begin VB.TextBox Text4addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   3360
       TabIndex        =   7
@@ -262,6 +411,15 @@ Begin VB.Form addBook
       Width           =   2415
    End
    Begin VB.TextBox Text3addBk 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   3360
       TabIndex        =   6
@@ -269,7 +427,16 @@ Begin VB.Form addBook
       Width           =   2415
    End
    Begin VB.ComboBox Combo2addBk 
-      Height          =   315
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   405
       ItemData        =   "addBook.frx":0000
       Left            =   3360
       List            =   "addBook.frx":0002
@@ -328,6 +495,15 @@ Begin VB.Form addBook
       Width           =   1695
    End
    Begin VB.TextBox Text1addBk 
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   7440
       TabIndex        =   2
@@ -341,6 +517,13 @@ Begin VB.Form addBook
       Text            =   "By"
       Top             =   600
       Width           =   1575
+   End
+   Begin VB.Image Image1 
+      BorderStyle     =   1  'Fixed Single
+      Height          =   2415
+      Left            =   9480
+      Top             =   1560
+      Width           =   3015
    End
    Begin VB.Label Label3 
       Alignment       =   2  'Center
@@ -361,14 +544,6 @@ Begin VB.Form addBook
       TabIndex        =   39
       Top             =   6480
       Width           =   2775
-   End
-   Begin VB.Image Image1 
-      BorderStyle     =   1  'Fixed Single
-      Height          =   2415
-      Left            =   9840
-      Stretch         =   -1  'True
-      Top             =   1680
-      Width           =   2295
    End
    Begin VB.Label Label2 
       Alignment       =   2  'Center
@@ -404,8 +579,8 @@ Begin VB.Form addBook
          Strikethrough   =   0   'False
       EndProperty
       ForeColor       =   &H00FFFFFF&
-      Height          =   615
-      Left            =   120
+      Height          =   495
+      Left            =   0
       TabIndex        =   37
       Top             =   120
       Width           =   3495
@@ -431,10 +606,10 @@ Begin VB.Form addBook
       Width           =   3015
    End
    Begin VB.Line Line1addBk 
-      BorderColor     =   &H00FFFFFF&
-      BorderWidth     =   3
-      X1              =   120
-      X2              =   3240
+      BorderColor     =   &H00000000&
+      BorderWidth     =   4
+      X1              =   0
+      X2              =   3600
       Y1              =   720
       Y2              =   720
    End
@@ -666,10 +841,10 @@ Begin VB.Form addBook
       Width           =   13095
    End
    Begin VB.Line Line2addBk 
-      BorderColor     =   &H00FFFFFF&
-      BorderWidth     =   3
-      X1              =   3240
-      X2              =   3960
+      BorderColor     =   &H00000000&
+      BorderWidth     =   4
+      X1              =   3600
+      X2              =   4320
       Y1              =   720
       Y2              =   1080
    End
@@ -761,7 +936,7 @@ Private Sub cmdCancel_Click()
     Text9addBk.Text = ""
     Text10addBk.Text = ""
     
-    
+    Image1.Picture = LoadPicture("")
     Text3addBk.Enabled = False
     Text4addBk.Enabled = False
     Text5addBk.Enabled = False
@@ -859,7 +1034,7 @@ Private Sub cmdSave_Click()
         If J = vbYes Then
             cn.Execute ("insert into Books values('" & Text12addBk.Text & "','" & Text3addBk.Text & "','" & Text4addBk.Text & "','" & Text5addBk.Text & "','" & Text6addBk.Text & "','" & Combo2addBk.Text & "','" & Text7addBk.Text & "','" & Text7addBk.Text & "','" & Y & "','" & Text8addBk.Text & "','" & Text10addBk.Text & "','" & Text9addBk.Text & "','" & Text1.Text & "','" & st & "')")
         
-            I = MsgBox("Book Added", 0 + vbInformation)
+            I = MsgBox("Book Added", 0 + vbInformation, "ADDED")
         
             If I = vbOK Then
                 Call p1
@@ -907,6 +1082,10 @@ End Sub
 
 Private Sub cmdUpdate_Click()
         
+        If rs.RecordCount = 0 Then
+        MsgBox ("Database Empty")
+        Exit Sub
+        End If
         If Text7addBk.Text <> l Then
             m = Text7addBk.Text
             a = m - l
@@ -933,8 +1112,7 @@ Private Sub cmdUpdate_Click()
             
         Else
             
-            Call p1
-            Call cmdCancel_Click
+            addBook.Show
         End If
    
 End Sub
@@ -1050,7 +1228,7 @@ Private Sub Command1addBk_Click(Index As Integer)
     Text10addBk.Text = ""
     Text1.Text = ""
     Text1addBk.Text = ""
-    Image1.Refresh
+    Image1.Picture = LoadPicture("")
     
 End Sub
 
@@ -1062,8 +1240,10 @@ Private Sub Command2_Click()
         MsgBox "Enter Price"
         Text1.SetFocus
     Else
-        CommonDialog1.ShowOpen
+        CommonDialog1.FileName = ""
         CommonDialog1.Filter = "Jpeg|*.jpg"
+        CommonDialog1.ShowOpen
+        
 '**** conditoion for samll size
         st = CommonDialog1.FileName
         Image1.Picture = LoadPicture(st)
@@ -1150,7 +1330,7 @@ End Sub
 
 Private Sub Text1_KeyPress(KeyAscii As Integer)
     
-    If (KeyAscii >= 49 And KeyAscii <= 57) Or KeyAscii = 8 Then
+    If (KeyAscii >= 48 And KeyAscii <= 57) Or KeyAscii = 8 Then
         Exit Sub
     Else
         KeyAscii = 0
@@ -1219,7 +1399,7 @@ End Sub
 
 Private Sub Text7addBk_KeyPress(KeyAscii As Integer)
     
-    If (KeyAscii >= 49 And KeyAscii <= 57) Or KeyAscii = 8 Then
+    If (KeyAscii >= 48 And KeyAscii <= 57) Or KeyAscii = 8 Then
         Exit Sub
     Else
         KeyAscii = 0

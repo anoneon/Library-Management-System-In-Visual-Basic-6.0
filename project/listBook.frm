@@ -14,43 +14,88 @@ Begin VB.Form listBook
    WindowState     =   2  'Maximized
    Begin VB.TextBox Text5 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   12000
       TabIndex        =   19
-      Top             =   6120
+      Top             =   6480
       Width           =   2415
    End
    Begin VB.TextBox Text4 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   12000
       TabIndex        =   18
-      Top             =   5400
+      Top             =   5760
       Width           =   2415
    End
    Begin VB.TextBox Text3 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   12000
       TabIndex        =   17
-      Top             =   4680
+      Top             =   5040
       Width           =   2415
    End
    Begin VB.TextBox Text2 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   12000
       TabIndex        =   16
-      Top             =   3960
+      Top             =   4320
       Width           =   2415
    End
    Begin VB.TextBox Text1 
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   12000
       MultiLine       =   -1  'True
       TabIndex        =   15
-      Top             =   3240
+      Top             =   3600
       Width           =   2415
    End
    Begin VB.CommandButton Command1 
@@ -92,9 +137,20 @@ Begin VB.Form listBook
       Width           =   495
    End
    Begin VB.CommandButton Command2listBk 
+      BackColor       =   &H00FF8080&
       Caption         =   "BACK"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   480
+      Style           =   1  'Graphical
       TabIndex        =   4
       Top             =   8040
       Width           =   1815
@@ -211,7 +267,7 @@ Begin VB.Form listBook
       EndProperty
    End
    Begin VB.Image Image1 
-      Height          =   1815
+      Height          =   2175
       Left            =   9840
       Top             =   1200
       Width           =   3855
@@ -233,7 +289,7 @@ Begin VB.Form listBook
       Height          =   495
       Left            =   9000
       TabIndex        =   14
-      Top             =   6120
+      Top             =   6480
       Width           =   2775
    End
    Begin VB.Label Label4 
@@ -253,7 +309,7 @@ Begin VB.Form listBook
       Height          =   495
       Left            =   9000
       TabIndex        =   13
-      Top             =   5400
+      Top             =   5760
       Width           =   2775
    End
    Begin VB.Label Label3 
@@ -273,7 +329,7 @@ Begin VB.Form listBook
       Height          =   495
       Left            =   9000
       TabIndex        =   12
-      Top             =   4680
+      Top             =   5040
       Width           =   2775
    End
    Begin VB.Label Label2 
@@ -293,7 +349,7 @@ Begin VB.Form listBook
       Height          =   495
       Left            =   9000
       TabIndex        =   11
-      Top             =   3960
+      Top             =   4320
       Width           =   2775
    End
    Begin VB.Label Label1 
@@ -313,7 +369,7 @@ Begin VB.Form listBook
       Height          =   495
       Left            =   9000
       TabIndex        =   10
-      Top             =   3240
+      Top             =   3600
       Width           =   2775
    End
    Begin VB.Shape Shape1listBk 
@@ -383,15 +439,15 @@ Begin VB.Form listBook
       Width           =   1575
    End
    Begin VB.Line Line1 
-      BorderColor     =   &H00FFFFFF&
+      BorderColor     =   &H00000000&
       BorderWidth     =   3
-      X1              =   120
+      X1              =   0
       X2              =   3240
       Y1              =   600
       Y2              =   600
    End
    Begin VB.Line Line2 
-      BorderColor     =   &H00FFFFFF&
+      BorderColor     =   &H00000000&
       BorderWidth     =   3
       X1              =   3240
       X2              =   4080
@@ -510,12 +566,18 @@ End Sub
 
 Private Sub DataGrid1listBk_SelChange(Cancel As Integer)
     
-    Text1.Text = DataGrid1listBk.Columns(1).Text
-    Text2.Text = DataGrid1listBk.Columns(2).Text
-    Text3.Text = DataGrid1listBk.Columns(5).Text
-    Text5.Text = DataGrid1listBk.Columns(7).Text
-    Text4.Text = DataGrid1listBk.Columns(12).Text
-    Image1.Picture = LoadPicture(DataGrid1listBk.Columns(13).Text)
+     If rs.RecordCount = 0 Then
+        MsgBox ("empty BOOKS")
+        Exit Sub
+        listBook.Show
+    Else
+        Text1.Text = DataGrid1listBk.Columns(1).Text
+        Text2.Text = DataGrid1listBk.Columns(2).Text
+        Text3.Text = DataGrid1listBk.Columns(5).Text
+        Text5.Text = DataGrid1listBk.Columns(7).Text
+        Text4.Text = DataGrid1listBk.Columns(12).Text
+        Image1.Picture = LoadPicture(DataGrid1listBk.Columns(13).Text)
+    End If
 End Sub
 
 Private Sub Form_Load()
@@ -529,7 +591,7 @@ Private Sub Form_Load()
     
     Set rs = New ADODB.Recordset
     rs.CursorLocation = adUseClient
-    rs.Open "select * from Books", cn, adOpenDynamic, adLockPessimistic
+    rs.Open "select * from Books order by ISBN", cn, adOpenDynamic, adLockPessimistic
 
     
     Set DataGrid1listBk.DataSource = rs
@@ -537,11 +599,5 @@ Private Sub Form_Load()
 
     Text3listBk.Text = rs.RecordCount
     
-    'If Not rs.EOF Then
-    '    If rs.Fields(8).Value <> "YES" Then
-    '        ct = ct + 1
-    '    End If
-    'End If
-    'Text2listBk.Text = ct
-
+    
 End Sub

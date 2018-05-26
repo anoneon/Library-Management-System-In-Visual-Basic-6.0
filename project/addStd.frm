@@ -15,19 +15,39 @@ Begin VB.Form addStd
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
    Begin VB.CommandButton command8addStd 
+      BackColor       =   &H00FF00FF&
       Caption         =   "Save"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   2160
-      TabIndex        =   4
+      Style           =   1  'Graphical
+      TabIndex        =   20
       Top             =   7920
       Visible         =   0   'False
       Width           =   1935
    End
    Begin VB.ComboBox Combo1 
       Enabled         =   0   'False
-      Height          =   315
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   405
       Left            =   3720
-      TabIndex        =   37
+      TabIndex        =   11
       Text            =   "Field"
       Top             =   7080
       Width           =   2415
@@ -35,7 +55,7 @@ Begin VB.Form addStd
    Begin MSComCtl2.DTPicker DTPicker1 
       Height          =   375
       Left            =   3720
-      TabIndex        =   36
+      TabIndex        =   9
       Top             =   6120
       Width           =   2415
       _ExtentX        =   4260
@@ -51,15 +71,15 @@ Begin VB.Form addStd
          Strikethrough   =   0   'False
       EndProperty
       CalendarBackColor=   8421504
-      Format          =   95092737
+      Format          =   95027201
       CurrentDate     =   43190
    End
    Begin VB.TextBox Text10addStd 
       Alignment       =   2  'Center
       Enabled         =   0   'False
       BeginProperty Font 
-         Name            =   "Lucida Console"
-         Size            =   14.25
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -68,7 +88,7 @@ Begin VB.Form addStd
       EndProperty
       Height          =   375
       Left            =   10680
-      TabIndex        =   35
+      TabIndex        =   15
       Top             =   6120
       Width           =   2175
    End
@@ -76,8 +96,8 @@ Begin VB.Form addStd
       Alignment       =   2  'Center
       Enabled         =   0   'False
       BeginProperty Font 
-         Name            =   "Lucida Console"
-         Size            =   14.25
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -86,16 +106,25 @@ Begin VB.Form addStd
       EndProperty
       Height          =   375
       Left            =   10680
-      TabIndex        =   34
+      TabIndex        =   16
       Top             =   6600
       Width           =   2175
    End
    Begin VB.ComboBox Combo2addStd 
       BackColor       =   &H00404040&
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00FFFFFF&
-      Height          =   315
+      Height          =   405
       Left            =   10680
-      TabIndex        =   33
+      TabIndex        =   13
       Text            =   "Year/Batch"
       Top             =   5160
       Width           =   2415
@@ -103,15 +132,24 @@ Begin VB.Form addStd
    Begin VB.ComboBox Combo1addStd 
       Height          =   315
       Left            =   5880
-      TabIndex        =   18
+      TabIndex        =   23
       Text            =   "By"
       Top             =   480
       Width           =   1575
    End
    Begin VB.TextBox Text1addStd 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   7800
-      TabIndex        =   17
+      TabIndex        =   22
       Top             =   480
       Width           =   2055
    End
@@ -132,7 +170,7 @@ Begin VB.Form addStd
       Left            =   8040
       MaskColor       =   &H00FFFFFF&
       Style           =   1  'Graphical
-      TabIndex        =   16
+      TabIndex        =   21
       Top             =   120
       Width           =   1695
    End
@@ -151,26 +189,53 @@ Begin VB.Form addStd
       Height          =   405
       Left            =   12840
       Locked          =   -1  'True
-      TabIndex        =   15
+      TabIndex        =   19
       Top             =   600
       Width           =   495
    End
    Begin VB.TextBox Text4addStd 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   885
       Left            =   3720
       MultiLine       =   -1  'True
-      TabIndex        =   14
+      TabIndex        =   8
       Top             =   5040
       Width           =   2415
    End
    Begin VB.TextBox Text6addStd 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   3720
-      TabIndex        =   13
+      TabIndex        =   10
       Top             =   6600
       Width           =   2415
    End
    Begin VB.TextBox Text8addStd 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   645
       Left            =   10680
       MultiLine       =   -1  'True
@@ -179,66 +244,150 @@ Begin VB.Form addStd
       Width           =   3495
    End
    Begin VB.TextBox Text9addStd 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   10680
-      TabIndex        =   11
+      TabIndex        =   14
       Top             =   5640
       Width           =   2175
    End
    Begin VB.TextBox Text3addStd 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   3720
-      TabIndex        =   9
+      TabIndex        =   7
       Top             =   4560
       Width           =   2415
    End
    Begin VB.CommandButton command3addStd 
+      BackColor       =   &H0000FF00&
       Caption         =   "&Add"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   2160
-      TabIndex        =   8
+      Style           =   1  'Graphical
+      TabIndex        =   6
       Top             =   7920
       Width           =   1935
    End
    Begin VB.CommandButton command4addStd 
+      BackColor       =   &H0000FFFF&
       Caption         =   "Delete"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   4680
-      TabIndex        =   7
+      Style           =   1  'Graphical
+      TabIndex        =   5
       Top             =   7920
       Width           =   1815
    End
    Begin VB.CommandButton command5addStd 
+      BackColor       =   &H00FF0000&
       Caption         =   "Close"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   7200
-      TabIndex        =   6
-      Top             =   7680
+      Style           =   1  'Graphical
+      TabIndex        =   4
+      Top             =   7920
       Width           =   1815
    End
    Begin VB.CommandButton command6addStd 
+      BackColor       =   &H00FFFF00&
       Caption         =   "&Edit"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   9720
-      TabIndex        =   5
-      Top             =   7440
+      Style           =   1  'Graphical
+      TabIndex        =   3
+      Top             =   7920
       Width           =   1935
    End
    Begin VB.CommandButton command9addStd 
+      BackColor       =   &H000080FF&
       Caption         =   "Cancel"
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   7200
-      TabIndex        =   3
+      Style           =   1  'Graphical
+      TabIndex        =   2
       Top             =   7920
       Visible         =   0   'False
       Width           =   1815
    End
    Begin VB.CommandButton command10addStd 
+      BackColor       =   &H000000FF&
       Caption         =   "Update"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   9720
-      TabIndex        =   2
+      Style           =   1  'Graphical
+      TabIndex        =   1
       Top             =   7920
       Visible         =   0   'False
       Width           =   1935
@@ -252,10 +401,10 @@ Begin VB.Form addStd
    Begin VB.CommandButton Command2addStd 
       BackColor       =   &H00FF0000&
       Caption         =   "&FIND"
-      Height          =   255
-      Left            =   10200
+      Height          =   375
+      Left            =   10080
       Style           =   1  'Graphical
-      TabIndex        =   1
+      TabIndex        =   0
       Top             =   480
       Width           =   975
    End
@@ -263,10 +412,19 @@ Begin VB.Form addStd
       BackColor       =   &H000000FF&
       Caption         =   "Click To Upload"
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   11.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   10680
       Style           =   1  'Graphical
-      TabIndex        =   0
+      TabIndex        =   18
       Top             =   7080
       Width           =   2175
    End
@@ -280,7 +438,7 @@ Begin VB.Form addStd
    Begin MSDataGridLib.DataGrid DataGrid1addStd 
       Height          =   3255
       Left            =   360
-      TabIndex        =   10
+      TabIndex        =   17
       Top             =   1200
       Width           =   8865
       _ExtentX        =   15637
@@ -370,7 +528,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   7440
-      TabIndex        =   32
+      TabIndex        =   37
       Top             =   5160
       Width           =   2775
    End
@@ -390,7 +548,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   7440
-      TabIndex        =   22
+      TabIndex        =   27
       Top             =   6600
       Width           =   2775
    End
@@ -418,7 +576,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   360
-      TabIndex        =   29
+      TabIndex        =   34
       Top             =   5040
       Width           =   3015
    End
@@ -438,7 +596,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   360
-      TabIndex        =   28
+      TabIndex        =   33
       Top             =   6120
       Width           =   3015
    End
@@ -458,7 +616,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   360
-      TabIndex        =   27
+      TabIndex        =   32
       Top             =   6600
       Width           =   3015
    End
@@ -478,7 +636,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   360
-      TabIndex        =   26
+      TabIndex        =   31
       Top             =   7080
       Width           =   3015
    End
@@ -498,7 +656,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   360
-      TabIndex        =   21
+      TabIndex        =   26
       Top             =   4560
       Width           =   3015
    End
@@ -518,7 +676,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   7440
-      TabIndex        =   25
+      TabIndex        =   30
       Top             =   4560
       Width           =   2775
    End
@@ -538,7 +696,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   7440
-      TabIndex        =   24
+      TabIndex        =   29
       Top             =   5640
       Width           =   2775
    End
@@ -558,7 +716,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   7440
-      TabIndex        =   23
+      TabIndex        =   28
       Top             =   6120
       Width           =   2775
    End
@@ -578,7 +736,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   7440
-      TabIndex        =   19
+      TabIndex        =   24
       Top             =   7080
       Width           =   2775
    End
@@ -586,7 +744,7 @@ Begin VB.Form addStd
       BackColor       =   &H000080FF&
       BackStyle       =   1  'Opaque
       Height          =   6615
-      Left            =   0
+      Left            =   120
       Top             =   1080
       Width           =   14295
    End
@@ -606,7 +764,7 @@ Begin VB.Form addStd
       ForeColor       =   &H00FFFFFF&
       Height          =   255
       Left            =   5880
-      TabIndex        =   31
+      TabIndex        =   36
       Top             =   120
       Width           =   1575
    End
@@ -625,15 +783,15 @@ Begin VB.Form addStd
       EndProperty
       Height          =   375
       Left            =   12240
-      TabIndex        =   30
+      TabIndex        =   35
       Top             =   120
       Width           =   1815
    End
    Begin VB.Line Line1addStd 
-      BorderColor     =   &H00FFFFFF&
+      BorderColor     =   &H00000000&
       BorderWidth     =   3
-      X1              =   120
-      X2              =   3240
+      X1              =   0
+      X2              =   3840
       Y1              =   600
       Y2              =   600
    End
@@ -652,18 +810,18 @@ Begin VB.Form addStd
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   615
-      Left            =   -120
-      TabIndex        =   20
+      Left            =   -360
+      TabIndex        =   25
       Top             =   0
       Width           =   4335
    End
    Begin VB.Line Line2addStd 
-      BorderColor     =   &H00FFFFFF&
+      BorderColor     =   &H00000000&
       BorderWidth     =   3
-      X1              =   3240
-      X2              =   3960
+      X1              =   3840
+      X2              =   4680
       Y1              =   600
-      Y2              =   960
+      Y2              =   1080
    End
 End
 Attribute VB_Name = "addStd"
@@ -683,7 +841,7 @@ Sub ref()
         
     
         Set DataGrid1addStd.DataSource = rs
-        DataGrid1addStd.refresh
+        DataGrid1addStd.Refresh
         Text2addStd.Text = rs.RecordCount
 End Sub
 
@@ -784,7 +942,7 @@ Private Sub Command2addStd_Click()
         If Combo1addStd.Text = "ID" Then
             Set rs = New ADODB.Recordset
             rs.CursorLocation = adUseClient
-            DataGrid1addStd.refresh
+            DataGrid1addStd.Refresh
             rs.Open "select * from Std where ID like  '" & Text1addStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
@@ -796,7 +954,7 @@ Private Sub Command2addStd_Click()
         ElseIf Combo1addStd.Text = "Name" Then
             Set rs = New ADODB.Recordset
             rs.CursorLocation = adUseClient
-            DataGrid1addStd.refresh
+            DataGrid1addStd.Refresh
             rs.Open "select * from Std where StdName like  '" & Text1addStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
@@ -808,7 +966,7 @@ Private Sub Command2addStd_Click()
         ElseIf Combo1addStd.Text = "Year" Then
             Set rs = New ADODB.Recordset
             rs.CursorLocation = adUseClient
-            DataGrid1addStd.refresh
+            DataGrid1addStd.Refresh
             rs.Open "select * from Std where Year like  '" & Text1addStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
@@ -865,6 +1023,8 @@ Private Sub command4addStd_Click()
     Dim o
     If rs.RecordCount = 0 Then
             MsgBox "DataBase is EMPTY", vbCritical, "EMPTY"
+            Exit Sub
+            addStd.Show
     End If
     If Text3addStd.Text = "" Then
         MsgBox ("select a Field First")
@@ -888,6 +1048,10 @@ Private Sub command5addStd_Click()
 End Sub
 
 Private Sub command6addStd_Click()
+    If rs.RecordCount = 0 Then
+        MsgBox ("Database Empty")
+        Exit Sub
+    End If
     If Text3addStd.Text = "" Then
         MsgBox ("Select a student first")
         addStd.Show
@@ -974,6 +1138,7 @@ Private Sub command8addStd_Click()
                 Text11addStd.Text = ""
                 Call command9addStd_Click
                 st = ""
+                Image1addStd.Picture = LoadPicture("")
             Else
                 addStd.Show
             End If                          'VByes close
@@ -1050,6 +1215,11 @@ End Sub
 
 Private Sub DataGrid1addStd_SelChange(Cancel As Integer)
     
+    If rs.RecordCount = 0 Then
+        MsgBox ("Empty database")
+        Exit Sub
+        addStd.Show
+    End If
     Text3addStd.Text = DataGrid1addStd.Columns(0)
     Text4addStd.Text = DataGrid1addStd.Columns(1)
     DTPicker1.Value = DataGrid1addStd.Columns(2)
@@ -1094,7 +1264,7 @@ Private Sub Form_Load()
     
     Set DataGrid1addStd.DataSource = rs
     Text2addStd.Text = rs.RecordCount
-    DataGrid1addStd.refresh
+    DataGrid1addStd.Refresh
     
     Text3addStd.Enabled = False
     Text4addStd.Enabled = False

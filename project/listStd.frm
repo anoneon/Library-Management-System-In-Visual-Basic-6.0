@@ -11,6 +11,7 @@ Begin VB.Form listStd
    ScaleHeight     =   8745
    ScaleWidth      =   14505
    StartUpPosition =   3  'Windows Default
+   WindowState     =   2  'Maximized
    Begin VB.CommandButton Command1listStd 
       BackColor       =   &H00808080&
       Caption         =   "&Refresh"
@@ -47,9 +48,20 @@ Begin VB.Form listStd
       Width           =   1455
    End
    Begin VB.CommandButton Command2listStd 
+      BackColor       =   &H00FF0000&
       Caption         =   "BACK"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   495
       Left            =   480
+      Style           =   1  'Graphical
       TabIndex        =   6
       Top             =   8040
       Width           =   1815
@@ -327,10 +339,10 @@ Begin VB.Form listStd
       Width           =   2535
    End
    Begin VB.Line Line1 
-      BorderColor     =   &H00FFFFFF&
+      BorderColor     =   &H00000000&
       BorderWidth     =   3
-      X1              =   120
-      X2              =   3240
+      X1              =   0
+      X2              =   3600
       Y1              =   600
       Y2              =   600
    End
@@ -401,10 +413,10 @@ Begin VB.Form listStd
       Width           =   14535
    End
    Begin VB.Line Line2 
-      BorderColor     =   &H00FFFFFF&
+      BorderColor     =   &H00000000&
       BorderWidth     =   3
-      X1              =   3240
-      X2              =   3720
+      X1              =   3600
+      X2              =   4080
       Y1              =   600
       Y2              =   1080
    End
@@ -519,12 +531,17 @@ End Sub
 
 
 Private Sub DataGrid1listStd_SelChange(Cancel As Integer)
-    
+     If rs.RecordCount = 0 Then
+        MsgBox ("empty Database")
+        Exit Sub
+        listStd.Show
+    Else
     Text1.Text = DataGrid1listStd.Columns(0).Text
     Text2.Text = DataGrid1listStd.Columns(1).Text
     Text3.Text = DataGrid1listStd.Columns(4).Text
     Text4.Text = DataGrid1listStd.Columns(6).Text
     Image1.Picture = LoadPicture(DataGrid1listStd.Columns(10).Text)
+    End If
 End Sub
 
 Private Sub Form_Load()
@@ -538,7 +555,7 @@ Private Sub Form_Load()
     
     Set rs = New ADODB.Recordset
     rs.CursorLocation = adUseClient
-    rs.Open "select * from Std", cn, adOpenDynamic, adLockPessimistic
+    rs.Open "select * from Std order by ID", cn, adOpenDynamic, adLockPessimistic
 
     
     Set DataGrid1listStd.DataSource = rs

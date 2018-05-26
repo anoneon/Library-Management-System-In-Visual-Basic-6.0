@@ -26,6 +26,7 @@ Begin VB.Form borrowBk
       AspectRatioValue=   0
    End
    Begin VB.CommandButton Command3 
+      BackColor       =   &H00FFFF80&
       Caption         =   "REFRESH"
       BeginProperty Font 
          Name            =   "Lucida Console"
@@ -38,11 +39,13 @@ Begin VB.Form borrowBk
       EndProperty
       Height          =   555
       Left            =   8400
+      Style           =   1  'Graphical
       TabIndex        =   27
       Top             =   7920
       Width           =   1455
    End
    Begin VB.CommandButton Command2 
+      BackColor       =   &H00FF8080&
       Caption         =   "BACK"
       BeginProperty Font 
          Name            =   "Lucida Console"
@@ -55,11 +58,13 @@ Begin VB.Form borrowBk
       EndProperty
       Height          =   615
       Left            =   6000
+      Style           =   1  'Graphical
       TabIndex        =   26
       Top             =   7920
       Width           =   1695
    End
    Begin VB.CommandButton Command1 
+      BackColor       =   &H00FF80FF&
       Caption         =   "BORROW"
       BeginProperty Font 
          Name            =   "Lucida Console"
@@ -72,6 +77,7 @@ Begin VB.Form borrowBk
       EndProperty
       Height          =   495
       Left            =   3720
+      Style           =   1  'Graphical
       TabIndex        =   25
       Top             =   7920
       Width           =   1575
@@ -94,6 +100,15 @@ Begin VB.Form borrowBk
       Width           =   6495
       Begin VB.TextBox Text10 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   2400
          TabIndex        =   24
@@ -102,6 +117,15 @@ Begin VB.Form borrowBk
       End
       Begin VB.TextBox Text9 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   2400
          TabIndex        =   23
@@ -110,6 +134,15 @@ Begin VB.Form borrowBk
       End
       Begin VB.TextBox Text8 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   735
          Left            =   2400
          MultiLine       =   -1  'True
@@ -119,6 +152,15 @@ Begin VB.Form borrowBk
       End
       Begin VB.TextBox Text7 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   405
          Left            =   2400
          TabIndex        =   21
@@ -224,6 +266,15 @@ Begin VB.Form borrowBk
       Width           =   6135
       Begin VB.TextBox Text1 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   2640
          TabIndex        =   29
@@ -231,6 +282,15 @@ Begin VB.Form borrowBk
          Width           =   2775
       End
       Begin VB.TextBox Text6 
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   2640
          TabIndex        =   16
@@ -239,6 +299,15 @@ Begin VB.Form borrowBk
       End
       Begin VB.TextBox Text5 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   2640
          TabIndex        =   14
@@ -247,6 +316,15 @@ Begin VB.Form borrowBk
       End
       Begin VB.TextBox Text4 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   495
          Left            =   2640
          TabIndex        =   12
@@ -255,6 +333,15 @@ Begin VB.Form borrowBk
       End
       Begin VB.TextBox Text3 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   735
          Left            =   2640
          TabIndex        =   10
@@ -364,13 +451,15 @@ Begin VB.Form borrowBk
    End
    Begin MSDataGridLib.DataGrid DataGrid2 
       Height          =   1695
-      Left            =   7200
+      Left            =   6960
       TabIndex        =   6
       Top             =   1200
-      Width           =   6015
-      _ExtentX        =   10610
+      Width           =   6495
+      _ExtentX        =   11456
       _ExtentY        =   2990
       _Version        =   393216
+      BackColor       =   0
+      ForeColor       =   49152
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -429,13 +518,15 @@ Begin VB.Form borrowBk
    End
    Begin MSDataGridLib.DataGrid DataGrid1 
       Height          =   1695
-      Left            =   360
+      Left            =   120
       TabIndex        =   5
       Top             =   1200
-      Width           =   5655
-      _ExtentX        =   9975
+      Width           =   6135
+      _ExtentX        =   10821
       _ExtentY        =   2990
       _Version        =   393216
+      BackColor       =   0
+      ForeColor       =   65280
       HeadLines       =   1
       RowHeight       =   15
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -494,6 +585,7 @@ Begin VB.Form borrowBk
    End
    Begin VB.TextBox Text2brw 
       Alignment       =   2  'Center
+      BackColor       =   &H00C0FFFF&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"
@@ -504,6 +596,7 @@ Begin VB.Form borrowBk
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   405
       Left            =   11880
       TabIndex        =   4
@@ -512,6 +605,7 @@ Begin VB.Form borrowBk
    End
    Begin VB.TextBox Text1brw 
       Alignment       =   2  'Center
+      BackColor       =   &H00C0FFFF&
       Enabled         =   0   'False
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"
@@ -522,6 +616,7 @@ Begin VB.Form borrowBk
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H000000FF&
       Height          =   405
       Left            =   11880
       TabIndex        =   3
@@ -569,7 +664,7 @@ Begin VB.Form borrowBk
    Begin VB.Line Line1brw 
       BorderColor     =   &H00000000&
       BorderWidth     =   3
-      X1              =   120
+      X1              =   0
       X2              =   2880
       Y1              =   600
       Y2              =   600
@@ -618,6 +713,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Dim cn As New ADODB.Connection
 Dim rs As New ADODB.Recordset
+Dim rs1 As New ADODB.Recordset
 Dim rd
 Private Sub Command1_Click()
     
@@ -667,8 +763,8 @@ Private Sub Command3_Click()
     rs1.Open "select * from Std order by ID", cn, adOpenDynamic, adLockPessimistic
     Set DataGrid1.DataSource = rs
     Set DataGrid2.DataSource = rs1
-    DataGrid1.refresh
-    DataGrid2.refresh
+    DataGrid1.Refresh
+    DataGrid2.Refresh
     
     Text1.Text = ""
     Text3.Text = ""
@@ -684,20 +780,30 @@ Private Sub Command3_Click()
 End Sub
 
 Private Sub DataGrid1_selchange(Cancel As Integer)
-    Text1.Text = DataGrid1.Columns(0)
-    Text3.Text = DataGrid1.Columns(1)
-    Text4.Text = DataGrid1.Columns(8)
-    Text5.Text = Date
-
+    If rs.RecordCount = 0 Then
+        MsgBox ("empty BOOKS")
+        Exit Sub
+        borrowBk.Show
+    Else
+        Text1.Text = DataGrid1.Columns(0)
+        Text3.Text = DataGrid1.Columns(1)
+        Text4.Text = DataGrid1.Columns(8)
+        Text5.Text = Date
+    End If
 End Sub
 
 
 Private Sub DataGrid2_SelChange(Cancel As Integer)
-    
-    Text7.Text = DataGrid2.Columns(0)
-    Text8.Text = DataGrid2.Columns(1)
-    Text9.Text = DataGrid2.Columns(4)
-    Text10.Text = DataGrid2.Columns(7)
+    If rs.RecordCount = 0 Then
+        MsgBox ("empty BOOKS")
+        Exit Sub
+        borrowBk.Show
+    Else
+        Text7.Text = DataGrid2.Columns(0)
+        Text8.Text = DataGrid2.Columns(1)
+        Text9.Text = DataGrid2.Columns(4)
+        Text10.Text = DataGrid2.Columns(6)
+    End If
 End Sub
 
 Private Sub Form_Load()
@@ -718,8 +824,8 @@ Private Sub Form_Load()
     rs1.Open "select * from Std order by ID", cn, adOpenDynamic, adLockPessimistic
     Set DataGrid1.DataSource = rs
     Set DataGrid2.DataSource = rs1
-    DataGrid1.refresh
-    DataGrid2.refresh
+    DataGrid1.Refresh
+    DataGrid2.Refresh
 
 End Sub
 

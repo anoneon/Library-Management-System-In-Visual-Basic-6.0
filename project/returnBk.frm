@@ -26,17 +26,39 @@ Begin VB.Form returnBk
       AspectRatioValue=   0
    End
    Begin VB.CommandButton Command4rbrw 
+      BackColor       =   &H00808080&
       Caption         =   "Back"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   10680
+      Style           =   1  'Graphical
       TabIndex        =   21
       Top             =   6360
       Width           =   1815
    End
    Begin VB.CommandButton Command3rbrw 
+      BackColor       =   &H0000FF00&
       Caption         =   "Refresh"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   615
       Left            =   10680
+      Style           =   1  'Graphical
       TabIndex        =   20
       Top             =   5040
       Width           =   1815
@@ -70,6 +92,15 @@ Begin VB.Form returnBk
       Width           =   1575
    End
    Begin VB.TextBox Text3rbrw 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   375
       Left            =   6480
       TabIndex        =   9
@@ -111,6 +142,15 @@ Begin VB.Form returnBk
       Width           =   9735
       Begin VB.TextBox Text9brw 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   735
          Left            =   6480
          TabIndex        =   23
@@ -118,15 +158,35 @@ Begin VB.Form returnBk
          Width           =   1335
       End
       Begin VB.CommandButton Command2 
-         Caption         =   "Return"
+         BackColor       =   &H00FFFF00&
+         Caption         =   "RETURN"
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   735
          Left            =   6360
+         Style           =   1  'Graphical
          TabIndex        =   19
          Top             =   2760
          Width           =   1695
       End
       Begin VB.TextBox Text8brw 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   615
          Left            =   2520
          TabIndex        =   18
@@ -135,6 +195,15 @@ Begin VB.Form returnBk
       End
       Begin VB.TextBox Text7brw 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   615
          Left            =   2520
          TabIndex        =   16
@@ -143,6 +212,15 @@ Begin VB.Form returnBk
       End
       Begin VB.TextBox Text6brw 
          Enabled         =   0   'False
+         BeginProperty Font 
+            Name            =   "MS Reference Sans Serif"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
          Height          =   615
          Left            =   2520
          TabIndex        =   14
@@ -394,10 +472,10 @@ Begin VB.Form returnBk
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   615
-      Left            =   0
+      Left            =   -240
       TabIndex        =   2
       Top             =   240
-      Width           =   3255
+      Width           =   2775
    End
    Begin VB.Shape Shape1 
       BackColor       =   &H000080FF&
@@ -505,7 +583,11 @@ Private Sub Command4rbrw_Click()
 End Sub
 
 Private Sub DataGrid1rbrw_SelChange(Cancel As Integer)
-    
+  If rs.RecordCount = 0 Then
+    MsgBox ("Empty Database")
+    Exit Sub
+    returnBk.Show
+  Else
     Text6brw.Text = DataGrid1rbrw.Columns(1)
     Text7brw.Text = DataGrid1rbrw.Columns(6)
     Text8brw.Text = DataGrid1rbrw.Columns(5)
@@ -522,6 +604,7 @@ Private Sub DataGrid1rbrw_SelChange(Cancel As Integer)
         Else
             Text9brw.Text = "Rupees 0"
         End If
+    End If
     End If
 End Sub
 
