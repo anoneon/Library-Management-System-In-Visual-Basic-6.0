@@ -17,7 +17,7 @@ Begin VB.Form returnBk
       Left            =   10560
       Top             =   7680
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   12000
       Tag             =   "NO"
       Top             =   7800
@@ -71,20 +71,38 @@ Begin VB.Form returnBk
       Style           =   1  'Graphical
       TabIndex        =   12
       Top             =   960
-      Width           =   615
+      Width           =   735
    End
    Begin VB.TextBox Text5rbrw 
       Alignment       =   2  'Center
       Enabled         =   0   'False
-      Height          =   375
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   420
       Left            =   11520
       TabIndex        =   11
       Top             =   600
-      Width           =   1455
+      Width           =   1575
    End
    Begin VB.TextBox Text4brw 
       Alignment       =   2  'Center
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   405
       Left            =   9480
       TabIndex        =   10
@@ -94,7 +112,7 @@ Begin VB.Form returnBk
    Begin VB.TextBox Text3rbrw 
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"
-         Size            =   9.75
+         Size            =   11.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -108,16 +126,34 @@ Begin VB.Form returnBk
       Width           =   1935
    End
    Begin VB.ComboBox Combo1rbrw 
-      Height          =   315
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
       Left            =   6480
       TabIndex        =   8
       Text            =   "By"
-      Top             =   600
+      Top             =   480
       Width           =   1455
    End
    Begin VB.TextBox Text1rbrw 
       Alignment       =   2  'Center
       Enabled         =   0   'False
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       Height          =   285
       Left            =   4800
       TabIndex        =   7
@@ -190,7 +226,7 @@ Begin VB.Form returnBk
          Height          =   615
          Left            =   2520
          TabIndex        =   18
-         Top             =   1920
+         Top             =   2160
          Width           =   2895
       End
       Begin VB.TextBox Text7brw 
@@ -207,7 +243,7 @@ Begin VB.Form returnBk
          Height          =   615
          Left            =   2520
          TabIndex        =   16
-         Top             =   1200
+         Top             =   1440
          Width           =   2895
       End
       Begin VB.TextBox Text6brw 
@@ -221,8 +257,9 @@ Begin VB.Form returnBk
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   615
+         Height          =   855
          Left            =   2520
+         MultiLine       =   -1  'True
          TabIndex        =   14
          Top             =   480
          Width           =   2895
@@ -253,7 +290,7 @@ Begin VB.Form returnBk
          Height          =   615
          Left            =   240
          TabIndex        =   17
-         Top             =   1920
+         Top             =   2160
          Width           =   2055
       End
       Begin VB.Label Label8rbrw 
@@ -273,7 +310,7 @@ Begin VB.Form returnBk
          Height          =   615
          Left            =   240
          TabIndex        =   15
-         Top             =   1200
+         Top             =   1440
          Width           =   2055
       End
       Begin VB.Label Label7rbrw 
@@ -309,7 +346,7 @@ Begin VB.Form returnBk
       BackColor       =   0
       ForeColor       =   65280
       HeadLines       =   1
-      RowHeight       =   15
+      RowHeight       =   19
       BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -321,9 +358,9 @@ Begin VB.Form returnBk
       EndProperty
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   9.75
          Charset         =   0
-         Weight          =   400
+         Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -368,7 +405,7 @@ Begin VB.Form returnBk
       BackStyle       =   0  'Transparent
       Caption         =   "Time"
       BeginProperty Font 
-         Name            =   "MS Reference Sans Serif"
+         Name            =   "Lucida Console"
          Size            =   14.25
          Charset         =   0
          Weight          =   700
@@ -376,6 +413,7 @@ Begin VB.Form returnBk
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   11880
       TabIndex        =   6
@@ -387,7 +425,7 @@ Begin VB.Form returnBk
       BackStyle       =   0  'Transparent
       Caption         =   "Date"
       BeginProperty Font 
-         Name            =   "MS Reference Sans Serif"
+         Name            =   "Lucida Console"
          Size            =   14.25
          Charset         =   0
          Weight          =   700
@@ -395,6 +433,7 @@ Begin VB.Form returnBk
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   375
       Left            =   9720
       TabIndex        =   5
@@ -515,7 +554,7 @@ End Sub
 Private Sub Command1rbrw_Click()
     If Text3rbrw.Text = "" Then
         
-        MsgBox "Search string empty", vbCritical, "error"
+        MsgBox "Search string empty", vbCritical, "Errorrr"
     
     Else
         
@@ -526,7 +565,7 @@ Private Sub Command1rbrw_Click()
             rs.Open "select * from Borrow where StdName like  '" & Text3rbrw.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbExclamation, "LBM"
             Else
                 Set DataGrid1rbrw.DataSource = rs
             End If
@@ -537,7 +576,7 @@ Private Sub Command1rbrw_Click()
             rs.Open "select * from Borrow where ISBN like  '" & Text3rbrw.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbExclamation, "LBM"
             Else
                 Set DataGrid1rbrw.DataSource = rs
             End If
@@ -550,20 +589,25 @@ End Sub
 
 Private Sub Command2_Click()
 Dim dummy
+If rs.RecordCount = 0 Then
+    MsgBox "Nothing To Return", vbInformation, "LBM"
+    returnBk.Show
+    Exit Sub
+Else
 dummy = DataGrid1rbrw.Columns(0)
-
+End If
 If Text6brw.Text = "" Then
-    MsgBox ("Slect A data")
+    MsgBox "Select a data", vbExclamation, "SELECT"
     returnBk.Show
 Else
-rs.Delete
+        rs.Delete
 
         Set rs = New ADODB.Recordset
         rs.CursorLocation = adUseClient
         rs.Open "select * from Books", cn, adOpenDynamic, adLockPessimistic
 
         cn.Execute ("update Books set Available_Copies=Available_Copies+1 where ISBN='" & dummy & "'")
-        MsgBox ("Book returned Successfully")
+        MsgBox "Book returned Successfully", vbInformation, "LBM"
         Call refres
         Call Command3rbrw_Click
 End If
@@ -584,7 +628,7 @@ End Sub
 
 Private Sub DataGrid1rbrw_SelChange(Cancel As Integer)
   If rs.RecordCount = 0 Then
-    MsgBox ("Empty Database")
+    MsgBox "Empty Database", vbCritical, "DATABASE EMPTY"
     Exit Sub
     returnBk.Show
   Else
@@ -609,13 +653,11 @@ Private Sub DataGrid1rbrw_SelChange(Cancel As Integer)
 End Sub
 
 Private Sub Form_Load()
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
-    
-       
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.OLEDB.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     
@@ -628,12 +670,7 @@ Private Sub Form_Load()
     DataGrid1rbrw.Refresh
     Text1rbrw.Text = rs.RecordCount
     
- 
-
 End Sub
-
-
-
 Private Sub Timer1_Timer()
     Text4brw = Date
     Text5rbrw.Text = Time

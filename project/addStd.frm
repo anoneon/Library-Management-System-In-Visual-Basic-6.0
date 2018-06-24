@@ -71,7 +71,7 @@ Begin VB.Form addStd
          Strikethrough   =   0   'False
       EndProperty
       CalendarBackColor=   8421504
-      Format          =   95027201
+      Format          =   51838977
       CurrentDate     =   43190
    End
    Begin VB.TextBox Text10addStd 
@@ -504,7 +504,7 @@ Begin VB.Form addStd
          EndProperty
       EndProperty
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   12480
       Tag             =   "NO"
       Top             =   7920
@@ -848,7 +848,7 @@ End Sub
 Private Sub Combo1_DropDown()
     
     If Text6addStd.Text = "" Then
-        MsgBox "Enter phone No."
+        MsgBox "Enter phone No.", , "Empty Field"
         Text6addStd.SetFocus
         Combo1.Text = "Field"
     Else
@@ -878,12 +878,12 @@ End Sub
 Private Sub Combo2addStd_DropDown()
     
 If Text8addStd.Text = "" Then
-    MsgBox "Address cant be null"
+    MsgBox "Address cant be Null", , "Empty Field"
     Text8addStd.SetFocus
     Text8addStd.Text = ""
     Combo2addStd.Text = "Year/Batch"
 ElseIf Len(Text8addStd.Text) < 10 Then
-    MsgBox "Address cant be less than 10 charecter"
+    MsgBox "Address cant be less than 10 charecter", , "Field Error"
     Text8addStd.SetFocus
     Text8addStd.Text = ""
     Combo2addStd.Text = "Year/Batch"
@@ -899,22 +899,22 @@ End Sub
 Private Sub command10addStd_Click()
        
         If Text6addStd.Text = tmp1 And Text8addStd.Text = tmp2 Then
-            MsgBox ("No changes Done")
+            MsgBox "No changes Done", vbInformation, "LBM"
             Call command9addStd_Click
             Exit Sub
         ElseIf Text6addStd.Text = "" Or Text8addStd.Text = "" Then
-            MsgBox ("NO Empty field")
+            MsgBox "NO Empty field allowed", , "Empty Field"
             addStd.Show
             Exit Sub
         ElseIf Text6addStd.Text <> tmp1 Or Text8addStd.Text <> tmp2 Then
-            MsgBox ("change will be done")
+            MsgBox "Change will be done", vbInformation, "LBM"
         End If
         
         
-        tmp = MsgBox("Are You Sure", vbYesNo + vbQuestion)
+        tmp = MsgBox("Are You Sure", vbYesNo + vbQuestion, "LBM")
         If tmp = vbYes Then
             cn.Execute ("update Std set Phone='" & Text6addStd.Text & "',Address='" & Text8addStd.Text & "' where ID='" & Text3addStd.Text & "'")
-            MsgBox ("Student data Updated")
+            MsgBox "Student data Updated", vbInformation, "LBM"
             Unload Me
             addStd.Show
             
@@ -937,7 +937,7 @@ End Sub
 
 Private Sub Command2addStd_Click()
     If Text1addStd.Text = "" Then
-        MsgBox "Search string empty", vbCritical, "error"
+        MsgBox "Search string empty", vbExclamation, "Empty Field"
     Else
         If Combo1addStd.Text = "ID" Then
             Set rs = New ADODB.Recordset
@@ -946,7 +946,7 @@ Private Sub Command2addStd_Click()
             rs.Open "select * from Std where ID like  '" & Text1addStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1addStd.DataSource = rs
             End If
@@ -958,7 +958,7 @@ Private Sub Command2addStd_Click()
             rs.Open "select * from Std where StdName like  '" & Text1addStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1addStd.DataSource = rs
             End If
@@ -970,7 +970,7 @@ Private Sub Command2addStd_Click()
             rs.Open "select * from Std where Year like  '" & Text1addStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1addStd.DataSource = rs
             End If
@@ -1027,9 +1027,9 @@ Private Sub command4addStd_Click()
             addStd.Show
     End If
     If Text3addStd.Text = "" Then
-        MsgBox ("select a Field First")
+        MsgBox "Select a Field First", , "Select Field"
     Else
-        o = MsgBox("Are You Sure?", vbYesNo)
+        o = MsgBox("Are You Sure?", vbYesNo + vbQuestion, "LBM")
         If o = vbYes Then
             rs.Delete
             Call ref
@@ -1039,7 +1039,7 @@ Private Sub command4addStd_Click()
             Call command9addStd_Click
         End If
     End If
-        
+       
 End Sub
 
 Private Sub command5addStd_Click()
@@ -1049,19 +1049,19 @@ End Sub
 
 Private Sub command6addStd_Click()
     If rs.RecordCount = 0 Then
-        MsgBox ("Database Empty")
+        MsgBox "Database Empty", vbCritical, "EMPTY DATABASE"
         Exit Sub
     End If
     If Text3addStd.Text = "" Then
-        MsgBox ("Select a student first")
+        MsgBox "Select a student first", vbExclamation, "Select Field"
         addStd.Show
      
     ElseIf rs.RecordCount = 0 Then
-        MsgBox "No Records there to Update"
+        MsgBox "No Records there to Update", vbCritical, "EMPTY DATABASE"
         Exit Sub
         
     Else
-        MsgBox ("you can only update Address and Ph no.")
+        MsgBox "You can Only Update Address and Ph no.", vbInformation, "LBM"
         
         Combo1addStd.Text = "By"
         Combo1.Enabled = False
@@ -1094,10 +1094,10 @@ Private Sub command7addStd_Click()
     
     Set rs = cn.Execute("select username from Users where username='" & Text9addStd.Text & "'")
     If Text9addStd.Text = "" Then
-        MsgBox "Enter Registered Person"
+        MsgBox "Enter Registered Person", , "LBM"
         Text9addStd.SetFocus
     ElseIf rs.EOF Then
-        MsgBox "Enter True Registered Person"
+        MsgBox "Enter True Registered Person", , "LBM"
         Text9addStd.SetFocus
         Text9addStd.Text = ""
     Else
@@ -1114,12 +1114,12 @@ Private Sub command8addStd_Click()
     Dim I As Integer
     
     If st = "" And Text9addStd.Text = "" Then
-        MsgBox ("empty field")
+        MsgBox "Empty Image Field", , "Empty Field"
     Else
         Set rs = cn.Execute("select * from Std where ID='" & Text3addStd.Text & "'")
     
         If rs.EOF Then
-            I = MsgBox("Are you sure? ***only upadte some detail in future", vbYesNo)
+            I = MsgBox("Are you sure? **only upadte some detail in future", vbYesNo + vbQuestion, "LBM")
             If I = vbYes Then
                 cn.Execute ("insert into Std values('" & Text3addStd.Text & "','" & Text4addStd.Text & "','" & DTPicker1.Value & "','" & Text6addStd.Text & "','" & Combo1.Text & "','" & Text8addStd.Text & "','" & Combo2addStd.Text & "','" & Text9addStd.Text & "','" & Text10addStd.Text & "','" & Text11addStd.Text & "','" & st & "')")
                 Call ref
@@ -1141,9 +1141,9 @@ Private Sub command8addStd_Click()
                 Image1addStd.Picture = LoadPicture("")
             Else
                 addStd.Show
-            End If                          'VByes close
+            End If                                                          'VByes close
         Else                                                                'else of eof
-           I = MsgBox("Student Exists", vbOKOnly)
+           I = MsgBox("Student Exists", vbOKOnly, "LBM")
         
             If I = vbOK Then
             
@@ -1216,7 +1216,7 @@ End Sub
 Private Sub DataGrid1addStd_SelChange(Cancel As Integer)
     
     If rs.RecordCount = 0 Then
-        MsgBox ("Empty database")
+        MsgBox "Empty database", , "Empty Database"
         Exit Sub
         addStd.Show
     End If
@@ -1240,7 +1240,7 @@ End Sub
 Private Sub DTPicker1_Change()
     If Text4addStd.Text = "" Then
         DTPicker1.Value = Date
-        MsgBox "Name can't be emopty"
+        MsgBox "Name can't be emopty", , "Empty Field"
         Text4addStd.SetFocus
     Else
         DTPicker1.SetFocus
@@ -1250,12 +1250,12 @@ End Sub
 
 Private Sub Form_Load()
     
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.OLEDB.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     rs.CursorLocation = adUseClient
@@ -1294,7 +1294,7 @@ End Sub
 
 Private Sub Text4addStd_GotFocus()
     If Text3addStd.Text = "" Then
-        MsgBox "ID can't be Empty"
+        MsgBox "ID can't be Empty", , "Empty Field"
         Text3addStd.SetFocus
     Else
         Text4addStd.SetFocus
@@ -1304,7 +1304,7 @@ End Sub
 Private Sub Text6addStd_GotFocus()
     
     If DTPicker1.Value = Date Then
-        MsgBox "Set the DATE using DROPDOWN"
+        MsgBox "Set the DATE using DROPDOWN", , "Set Field"
         DTPicker1.SetFocus
     Else
         Text6addStd.SetFocus
@@ -1328,7 +1328,7 @@ End Sub
 Private Sub Text8addStd_GotFocus()
     
     If Combo1.Text = "" Or Combo1.Text = "Field" Then
-        MsgBox "Set Student Field"
+        MsgBox "Set Student Field", , "Empty Field"
         Combo1.SetFocus
     Else
         Text8addStd.SetFocus
@@ -1340,7 +1340,7 @@ End Sub
 Private Sub Text9addStd_GotFocus()
     
     If Combo2addStd.Text = "" Or Combo2addStd.Text = "Year/Batch" Then
-        MsgBox "Select Year"
+        MsgBox "Select Year", , "Empty Field"
         Combo2addStd.SetFocus
         Combo2addStd.Text = "Year/Batch"
     Else

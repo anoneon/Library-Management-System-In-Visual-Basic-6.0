@@ -190,7 +190,7 @@ Begin VB.Form listBook
       Top             =   120
       Width           =   1695
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   14040
       Tag             =   "NO"
       Top             =   8040
@@ -488,7 +488,7 @@ End Sub
 Private Sub Command1_Click()
     
     If Text1listBk.Text = "" Then
-        MsgBox "Search string empty", vbCritical, "error"
+        MsgBox "Search string empty", vbCritical, "Errorrr"
     Else
         If Combo1listBk.Text = "ISBN" Then
             Set rs = New ADODB.Recordset
@@ -497,7 +497,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where ISBN like  '" & Text1listBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not Found", vbCritical, "LBM"
             Else
                 Set DataGrid1listBk.DataSource = rs
             End If
@@ -509,7 +509,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where Title like  '" & Text1listBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not Found", vbCritical, "LBM"
             Else
                 Set DataGrid1listBk.DataSource = rs
             End If
@@ -521,7 +521,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where Author like  '" & Text1listBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not Found", vbCritical, "LBM"
             Else
                 Set DataGrid1listBk.DataSource = rs
             End If
@@ -533,7 +533,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where Subject like  '" & Text1listBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not Found", vbCritical, "LBM"
             Else
                 Set DataGrid1listBk.DataSource = rs
             End If
@@ -567,7 +567,7 @@ End Sub
 Private Sub DataGrid1listBk_SelChange(Cancel As Integer)
     
      If rs.RecordCount = 0 Then
-        MsgBox ("empty BOOKS")
+        MsgBox "Empty BOOKS", vbCritical, "LBM"
         Exit Sub
         listBook.Show
     Else
@@ -583,11 +583,11 @@ End Sub
 Private Sub Form_Load()
     
     ct = 0
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.oledb.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     rs.CursorLocation = adUseClient

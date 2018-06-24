@@ -31,7 +31,7 @@ Begin VB.Form login
       Top             =   2760
       Width           =   1215
    End
-   Begin Project1.AutoResize AutoResize1 
+   Begin LBMSuansu.AutoResize AutoResize1 
       Left            =   6000
       Tag             =   "NO"
       Top             =   120
@@ -326,12 +326,12 @@ End Sub
 Private Sub Form_Load()
 
     
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     Me.Left = (Screen.Width - Me.Width) / 2
     Me.Top = (Screen.Height - Me.Height) / 2
     
     login.Caption = "Library Management System V 1.0"
-    Image1login.Picture = LoadPicture(App.Path & "\images\login.jpg")
+    Image1login.Picture = LoadPicture(App.path & "\images\login.jpg")
     Shape1(0).BackColor = RGB(224, 108, 52)
     Shape1(1).BackColor = RGB(210, 241, 35)
     Shape1(2).BackColor = RGB(237, 164, 239)
@@ -353,7 +353,7 @@ Private Sub Form_Load()
     Command1.Visible = False
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.OLEDB.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
 
     
 End Sub

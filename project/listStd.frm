@@ -174,7 +174,7 @@ Begin VB.Form listStd
       Top             =   6360
       Width           =   2415
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   14040
       Tag             =   "NO"
       Top             =   8040
@@ -454,7 +454,7 @@ End Sub
 Private Sub Command1_Click()
     
     If Text1listStd.Text = "" Then
-        MsgBox "Search string empty", vbCritical, "error"
+        MsgBox "Search string empty", vbCritical, "Errorrr"
     Else
         If Combo1listStd.Text = "ID" Then
             Set rs = New ADODB.Recordset
@@ -463,7 +463,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Std where ID like  '" & Text1listStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1listStd.DataSource = rs
             End If
@@ -475,7 +475,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Std where StdName like  '" & Text1listStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1listStd.DataSource = rs
             End If
@@ -487,7 +487,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Std where Year like  '" & Text1listStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1listStd.DataSource = rs
             End If
@@ -499,7 +499,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Std where Field like  '" & Text1listStd.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Not found", vbCritical, "LBM"
             Else
                 Set DataGrid1listStd.DataSource = rs
             End If
@@ -532,7 +532,7 @@ End Sub
 
 Private Sub DataGrid1listStd_SelChange(Cancel As Integer)
      If rs.RecordCount = 0 Then
-        MsgBox ("empty Database")
+        MsgBox "Empty Database", vbExclamation, "EMPTY DATABASE"
         Exit Sub
         listStd.Show
     Else
@@ -547,11 +547,11 @@ End Sub
 Private Sub Form_Load()
     
     ct = 0
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.oledb.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     rs.CursorLocation = adUseClient

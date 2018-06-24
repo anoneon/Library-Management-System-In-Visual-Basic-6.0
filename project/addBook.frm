@@ -446,7 +446,7 @@ Begin VB.Form addBook
       Top             =   6960
       Width           =   2415
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   12480
       Tag             =   "NO"
       Top             =   7680
@@ -916,7 +916,7 @@ Private Sub cmdAdd_Click()
     cmdEdit.Enabled = False
 End Sub
 
-Private Sub cmdCancel_Click()
+Public Sub cmdCancel_Click()
     
     Timer1.Enabled = False
     
@@ -968,14 +968,17 @@ End Sub
 
 Private Sub cmdDel_Click()
         Dim k As Integer
+        
         If rs.RecordCount = 0 Then
             MsgBox "DataBase is EMPTY", vbCritical, "EMPTY"
             Exit Sub
         End If
+        
         If Text12addBk.Text = "" Then
-            MsgBox "select the book from table"
+            MsgBox "Select Book from table", , "Select Field"
         Else
-            k = MsgBox("are you sure?", vbYesNo)
+            
+            k = MsgBox("are you sure?", vbYesNo + vbQuestion, "LBM")
             If k = vbYes Then
                 rs.Delete
                 Call p1
@@ -990,13 +993,13 @@ End Sub
 Sub cmdEdit_Click()
     
     If Text12addBk.Text = "" Then
-        MsgBox "Select A Field"
+        MsgBox "Select A Field", vbInformation, "Select Field"
         addBook.Show
     ElseIf rs.RecordCount = 0 Then
-        MsgBox "No Records there to Update"
+        MsgBox "No Records there to Update", vbExclamation, "Empty Database"
         Exit Sub
     Else
-        MsgBox ("you can only edit total copies of book")
+        MsgBox "You can only edit total copies of book", vbInformation, "LBM"
         
         
         
@@ -1026,10 +1029,10 @@ Private Sub cmdSave_Click()
     
     Set rs = cn.Execute("select * from Books where ISBN='" & Text12addBk.Text & "'")
     If st = "" Then
-        MsgBox "Enter the data in given Fields"
+        MsgBox "Enter the data in given Fields", , "Empty Field"
     
     ElseIf rs.EOF Then
-      J = MsgBox("are you sure? *can only update total copies in future", vbYesNo)
+      J = MsgBox("are you sure? **can only update total copies in future", vbYesNo + vbQuestion, "LBM")
         
         If J = vbYes Then
             cn.Execute ("insert into Books values('" & Text12addBk.Text & "','" & Text3addBk.Text & "','" & Text4addBk.Text & "','" & Text5addBk.Text & "','" & Text6addBk.Text & "','" & Combo2addBk.Text & "','" & Text7addBk.Text & "','" & Text7addBk.Text & "','" & Y & "','" & Text8addBk.Text & "','" & Text10addBk.Text & "','" & Text9addBk.Text & "','" & Text1.Text & "','" & st & "')")
@@ -1059,7 +1062,7 @@ Private Sub cmdSave_Click()
         End If
         
     Else
-        I = MsgBox("Book Already Exists", 0 + vbCritical)
+        I = MsgBox("Book Already Exists", 0 + vbCritical, "LBM")
         If I = vbOK Then
             Call p1
             Text12addBk.Text = ""
@@ -1083,7 +1086,7 @@ End Sub
 Private Sub cmdUpdate_Click()
         
         If rs.RecordCount = 0 Then
-        MsgBox ("Database Empty")
+        MsgBox "Database Empty", vbExclamation, "LBM"
         Exit Sub
         End If
         If Text7addBk.Text <> l Then
@@ -1091,22 +1094,22 @@ Private Sub cmdUpdate_Click()
             a = m - l
             c = DataGrid1addBk.Columns(7) + a
         ElseIf Text7addBk.Text = l Then
-            MsgBox ("None Books are added")
+            MsgBox "None Books are added", vbInformation, "LBM"
             Call cmdCancel_Click
             Exit Sub
         End If
         
         If a > 0 Then
-         MsgBox (a & " books will be added")
+         MsgBox a & " books will be added", vbInformation, "INFO"
         Else
-         MsgBox (a & "books will be decreased")
+         MsgBox a & " books will be decreased", vbInformation, "INFO"
         End If
         
         
-        tmp = MsgBox("Are You Sure", vbYesNo + vbQuestion)
+        tmp = MsgBox("Are You Sure", vbYesNo + vbQuestion, "LBM")
         If tmp = vbYes Then
             cn.Execute ("update Books set Total_Copies='" & Text7addBk & "',Available_Copies='" & c & "' where ISBN='" & Text12addBk.Text & "'")
-            MsgBox ("Book Updated")
+            MsgBox "Book Updated", vbInformation, "UPDATED"
             Unload Me
             addBook.Show
             
@@ -1132,7 +1135,7 @@ End Sub
 Private Sub Combo2addBk_DropDown()
     
      If Text6addBk.Text = "" Or Text6addBk.Text = "Select Subject" Then
-        MsgBox "Publisher can't be emopty"
+        MsgBox "Empty Publisher", , "Empty Field"
         Combo2addBk.Text = "Select Subject"
         Text6addBk.SetFocus
     Else
@@ -1150,16 +1153,13 @@ End Sub
 Private Sub Combo2addBk_GotFocus()
     
     Call Combo2addBk_DropDown
-    
-    
-    
-    
+       
 End Sub
 
 Private Sub Command1_Click()
     
     If Text1addBk.Text = "" Then
-        MsgBox "Search string empty", vbCritical, "error"
+        MsgBox "Search string empty", vbExclamation, "errorrrr"
     Else
         If Combo1addBk.Text = "ISBN" Then
             Set rs = New ADODB.Recordset
@@ -1168,7 +1168,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where ISBN like  '" & Text1addBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Book not found", vbCritical, "Not Found"
             Else
                 Set DataGrid1addBk.DataSource = rs
             End If
@@ -1180,7 +1180,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where Title like  '" & Text1addBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Book not found", vbCritical, "Not Found"
             Else
                 Set DataGrid1addBk.DataSource = rs
             End If
@@ -1192,7 +1192,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where Author like  '" & Text1addBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Book not found", vbCritical, "Not Found"
             Else
                 Set DataGrid1addBk.DataSource = rs
             End If
@@ -1204,7 +1204,7 @@ Private Sub Command1_Click()
             rs.Open "select * from Books where Subject like  '" & Text1addBk.Text & "%'", cn, adOpenDynamic, adLockPessimistic
             
             If rs.EOF Then
-                MsgBox "not found"
+                MsgBox "Book not found", vbCritical, "Not Found"
             Else
                 Set DataGrid1addBk.DataSource = rs
             End If
@@ -1237,14 +1237,12 @@ Private Sub Command2_Click()
     
     
     If Text1.Text = "" Then
-        MsgBox "Enter Price"
+        MsgBox "Enter Price First", , "Empty Field"
         Text1.SetFocus
     Else
         CommonDialog1.FileName = ""
         CommonDialog1.Filter = "Jpeg|*.jpg"
         CommonDialog1.ShowOpen
-        
-'**** conditoion for samll size
         st = CommonDialog1.FileName
         Image1.Picture = LoadPicture(st)
     End If
@@ -1272,14 +1270,14 @@ End Sub
 
 Private Sub Form_Load()
     
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     
     Command2.Enabled = False
     
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.OLEDB.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     rs.CursorLocation = adUseClient
@@ -1317,10 +1315,10 @@ Private Sub Text1_GotFocus()
     
 Set rs = cn.Execute("select username from Users where username='" & Text8addBk.Text & "'")
     If Text8addBk.Text = "" Then
-        MsgBox "Registered By can't be emopty"
+        MsgBox "Enter Registered UserName", , "Empty Field"
         Text8addBk.SetFocus
     ElseIf rs.EOF Then
-        MsgBox "Registered user doesn't match"
+        MsgBox "Registered username doesn't match", , "Empty Field"
         Text8addBk.SetFocus
         Text8addBk.Text = ""
     Else
@@ -1341,7 +1339,7 @@ End Sub
 Private Sub Text3addBk_GotFocus()
     
         If Text12addBk.Text = "" Then
-            MsgBox "ISBN can't be emopty"
+            MsgBox "Enter ISBN", , "Empty Field"
             Text12addBk.SetFocus
         Else
             Text3addBk.SetFocus
@@ -1354,7 +1352,7 @@ Private Sub Text3addBk_GotFocus()
 Private Sub Text4addBk_GotFocus()
     
     If Text3addBk.Text = "" Then
-        MsgBox "Title can't be emopty"
+        MsgBox "Empty Title", , "Empty Field"
         Text3addBk.SetFocus
     Else
         Text4addBk.SetFocus
@@ -1364,7 +1362,7 @@ End Sub
 Private Sub Text5addBk_GotFocus()
     
     If Text4addBk.Text = "" Then
-        MsgBox "Author can't be emopty"
+        MsgBox "Empty Author", , "Empty Field"
         Text4addBk.SetFocus
     Else
         Text5addBk.SetFocus
@@ -1374,7 +1372,7 @@ End Sub
 Private Sub Text6addBk_GotFocus()
     
     If Text5addBk.Text = "" Then
-        MsgBox "Copyright can't be emopty"
+        MsgBox "Empty Copyright", , "Empty Field"
         Text5addBk.SetFocus
     Else
         Text6addBk.SetFocus
@@ -1386,11 +1384,11 @@ End Sub
 
 Private Sub Text7addBk_GotFocus()
        If Combo2addBk.Text = "Select Subject" Or Combo2addBk.Text = "" Then
-        MsgBox "Select Some Subject"
+        MsgBox "Select Some Subject", , "Empty Field"
         Combo2addBk.SetFocus
         Combo2addBk.Text = "Select Subject"
     ElseIf Not (Combo2addBk.Text = "Select Subject" Or Combo2addBk.Text = "Novel" Or Combo2addBk.Text = "Mathematics" Or Combo2addBk.Text = "Chemistry" Or Combo2addBk.Text = "Physics" Or Combo2addBk.Text = "Biology" Or Combo2addBk.Text = "Computer") Then
-        MsgBox "cant be that"
+        MsgBox "Can't be that", , "Field Error"
         Combo2addBk.SetFocus
     Else
         Text7addBk.SetFocus
@@ -1410,7 +1408,7 @@ End Sub
 Private Sub Text8addBk_GotFocus()
     
     If Text7addBk.Text = "" Then
-        MsgBox "Total Copies can't be emopty"
+        MsgBox "Empty Total Copies", , "Empty Field"
         Text7addBk.SetFocus
     Else
         Text8addBk.SetFocus
@@ -1422,6 +1420,5 @@ Private Sub Timer1_Timer()
     
     Text9addBk.Text = Time
     Text10addBk.Text = Date
-    
-    
+       
 End Sub

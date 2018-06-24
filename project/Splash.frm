@@ -8,7 +8,7 @@ Begin VB.Form splashForm
    ClientWidth     =   7080
    BeginProperty Font 
       Name            =   "Lucida Console"
-      Size            =   15.75
+      Size            =   18
       Charset         =   0
       Weight          =   700
       Underline       =   0   'False
@@ -37,7 +37,7 @@ Begin VB.Form splashForm
       Appearance      =   1
       MouseIcon       =   "Splash.frx":030A
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   5520
       Tag             =   "NO"
       Top             =   120
@@ -54,16 +54,34 @@ Begin VB.Form splashForm
       BackColor       =   &H00FFFFFF&
       BackStyle       =   0  'Transparent
       Caption         =   "Label5"
-      ForeColor       =   &H00FF00FF&
-      Height          =   375
-      Left            =   3840
+      BeginProperty Font 
+         Name            =   "Lucida Console"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   495
+      Left            =   4920
       TabIndex        =   5
-      Top             =   3720
-      Width           =   2895
+      Top             =   3840
+      Width           =   2415
    End
    Begin VB.Label Label7splash 
       BackStyle       =   0  'Transparent
       Caption         =   "Label1"
+      BeginProperty Font 
+         Name            =   "Lucida Console"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
       ForeColor       =   &H00FFFF80&
       Height          =   375
       Left            =   5160
@@ -74,7 +92,16 @@ Begin VB.Form splashForm
    Begin VB.Label Label6splash 
       BackStyle       =   0  'Transparent
       Caption         =   "Label1"
-      ForeColor       =   &H000000FF&
+      BeginProperty Font 
+         Name            =   "Lucida Console"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H0080FF80&
       Height          =   495
       Left            =   480
       TabIndex        =   6
@@ -85,8 +112,8 @@ Begin VB.Form splashForm
       BackStyle       =   0  'Transparent
       Caption         =   "Label4"
       BeginProperty Font 
-         Name            =   "Lucida Console"
-         Size            =   18
+         Name            =   "Comic Sans MS"
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -97,68 +124,68 @@ Begin VB.Form splashForm
       Height          =   855
       Left            =   5760
       TabIndex        =   4
-      Top             =   840
+      Top             =   720
       Width           =   1335
    End
    Begin VB.Label Label3splash 
       BackStyle       =   0  'Transparent
       Caption         =   "Label3"
       BeginProperty Font 
-         Name            =   "Lucida Console"
-         Size            =   18
+         Name            =   "Comic Sans MS"
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
+      ForeColor       =   &H000080FF&
       Height          =   495
-      Left            =   4200
+      Left            =   4080
       TabIndex        =   3
-      Top             =   840
+      Top             =   720
       Width           =   1935
    End
    Begin VB.Label Label2splash 
       BackStyle       =   0  'Transparent
       Caption         =   "Label2"
       BeginProperty Font 
-         Name            =   "Lucida Console"
-         Size            =   18
+         Name            =   "Comic Sans MS"
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
+      ForeColor       =   &H000080FF&
       Height          =   495
-      Left            =   2280
+      Left            =   1800
       TabIndex        =   2
       Top             =   360
-      Width           =   2295
+      Width           =   2775
    End
    Begin VB.Label Label1splash 
       BackStyle       =   0  'Transparent
       Caption         =   "Label1"
       BeginProperty Font 
-         Name            =   "Lucida Console"
-         Size            =   18
+         Name            =   "Comic Sans MS"
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      ForeColor       =   &H0000FFFF&
+      ForeColor       =   &H000080FF&
       Height          =   495
-      Left            =   600
+      Left            =   240
       TabIndex        =   1
       Top             =   120
       Width           =   1815
    End
-   Begin Project1.ucAniGIF ucAniGIF1 
-      Height          =   4440
+   Begin LBMSuansu.ucAniGIF ucAniGIF1 
+      Height          =   4080
       Left            =   0
       Top             =   0
       Width           =   7080
@@ -183,7 +210,7 @@ Label1splash.Caption = "LIBRARY"
 Label2splash.Caption = "MANAGEMENT"
 Label3splash.Caption = "SYSTEM"
 Label4splash.Caption = "V 1.0"
-Label5splash.Caption = "© Slg PIRATES"
+Label5splash.Caption = "©2018 Suansu"
 Label6splash.Caption = "Loadin Please wait"
 
 Me.Left = (Screen.Width - Me.Width) / 2

@@ -12,12 +12,84 @@ Begin VB.Form borrowBk
    ScaleWidth      =   13545
    StartUpPosition =   3  'Windows Default
    WindowState     =   2  'Maximized
+   Begin VB.CommandButton Command5 
+      BackColor       =   &H00C0C000&
+      Caption         =   "Search"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   435
+      Left            =   10680
+      Style           =   1  'Graphical
+      TabIndex        =   33
+      Top             =   960
+      Width           =   1215
+   End
+   Begin VB.TextBox Text11 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   8160
+      TabIndex        =   32
+      Text            =   "Search by ID"
+      Top             =   960
+      Width           =   2055
+   End
+   Begin VB.CommandButton Command4 
+      BackColor       =   &H00C0C000&
+      Caption         =   "Search"
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   3720
+      Style           =   1  'Graphical
+      TabIndex        =   31
+      Top             =   960
+      Width           =   1095
+   End
+   Begin VB.TextBox Text2 
+      BeginProperty Font 
+         Name            =   "MS Reference Sans Serif"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   375
+      Left            =   1320
+      TabIndex        =   30
+      Text            =   "Search by NAME"
+      Top             =   960
+      Width           =   2055
+   End
    Begin VB.Timer Timer1 
       Interval        =   60
       Left            =   1080
       Top             =   8160
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   240
       Tag             =   "NO"
       Top             =   8280
@@ -37,11 +109,11 @@ Begin VB.Form borrowBk
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   555
+      Height          =   495
       Left            =   8400
       Style           =   1  'Graphical
       TabIndex        =   27
-      Top             =   7920
+      Top             =   8160
       Width           =   1455
    End
    Begin VB.CommandButton Command2 
@@ -56,11 +128,11 @@ Begin VB.Form borrowBk
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   615
+      Height          =   495
       Left            =   6000
       Style           =   1  'Graphical
       TabIndex        =   26
-      Top             =   7920
+      Top             =   8160
       Width           =   1695
    End
    Begin VB.CommandButton Command1 
@@ -79,7 +151,7 @@ Begin VB.Form borrowBk
       Left            =   3720
       Style           =   1  'Graphical
       TabIndex        =   25
-      Top             =   7920
+      Top             =   8160
       Width           =   1575
    End
    Begin VB.Frame Frame2 
@@ -96,7 +168,7 @@ Begin VB.Form borrowBk
       Height          =   4455
       Left            =   6960
       TabIndex        =   8
-      Top             =   3120
+      Top             =   3480
       Width           =   6495
       Begin VB.TextBox Text10 
          Enabled         =   0   'False
@@ -262,7 +334,7 @@ Begin VB.Form borrowBk
       Height          =   4455
       Left            =   120
       TabIndex        =   7
-      Top             =   3120
+      Top             =   3480
       Width           =   6135
       Begin VB.TextBox Text1 
          Enabled         =   0   'False
@@ -453,7 +525,7 @@ Begin VB.Form borrowBk
       Height          =   1695
       Left            =   6960
       TabIndex        =   6
-      Top             =   1200
+      Top             =   1680
       Width           =   6495
       _ExtentX        =   11456
       _ExtentY        =   2990
@@ -520,7 +592,7 @@ Begin VB.Form borrowBk
       Height          =   1695
       Left            =   120
       TabIndex        =   5
-      Top             =   1200
+      Top             =   1680
       Width           =   6135
       _ExtentX        =   10821
       _ExtentY        =   2990
@@ -600,7 +672,7 @@ Begin VB.Form borrowBk
       Height          =   405
       Left            =   11880
       TabIndex        =   4
-      Top             =   600
+      Top             =   120
       Width           =   1455
    End
    Begin VB.TextBox Text1brw 
@@ -618,7 +690,7 @@ Begin VB.Form borrowBk
       EndProperty
       ForeColor       =   &H000000FF&
       Height          =   405
-      Left            =   11880
+      Left            =   9480
       TabIndex        =   3
       Top             =   120
       Width           =   1455
@@ -639,7 +711,7 @@ Begin VB.Form borrowBk
       Height          =   375
       Left            =   11040
       TabIndex        =   2
-      Top             =   720
+      Top             =   240
       Width           =   855
    End
    Begin VB.Label Label2brw 
@@ -656,7 +728,7 @@ Begin VB.Form borrowBk
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   11040
+      Left            =   8520
       TabIndex        =   1
       Top             =   240
       Width           =   735
@@ -666,8 +738,8 @@ Begin VB.Form borrowBk
       BorderWidth     =   3
       X1              =   0
       X2              =   2880
-      Y1              =   600
-      Y2              =   600
+      Y1              =   480
+      Y2              =   480
    End
    Begin VB.Label Label1brw 
       Alignment       =   2  'Center
@@ -684,17 +756,17 @@ Begin VB.Form borrowBk
       EndProperty
       ForeColor       =   &H00FFFFFF&
       Height          =   615
-      Left            =   -240
+      Left            =   -360
       TabIndex        =   0
-      Top             =   120
+      Top             =   0
       Width           =   3135
    End
    Begin VB.Shape Shape1 
       BackColor       =   &H000080FF&
       BackStyle       =   1  'Opaque
-      Height          =   6735
+      Height          =   7215
       Left            =   0
-      Top             =   1080
+      Top             =   840
       Width           =   13575
    End
    Begin VB.Line Line2brw 
@@ -702,8 +774,8 @@ Begin VB.Form borrowBk
       BorderWidth     =   3
       X1              =   2880
       X2              =   3360
-      Y1              =   600
-      Y2              =   1080
+      Y1              =   480
+      Y2              =   960
    End
 End
 Attribute VB_Name = "borrowBk"
@@ -716,32 +788,46 @@ Dim rs As New ADODB.Recordset
 Dim rs1 As New ADODB.Recordset
 Dim rd
 Private Sub Command1_Click()
-    
     Set rs = cn.Execute("select username from Users where username='" & Text6.Text & "'")
+   
     If Text4.Text = "NO" Then
-        MsgBox ("Selected Book Not Available")
+        MsgBox "Selected Book Not Available", vbExclamation, "LBM"
         borrowBk.Show
         Exit Sub
     ElseIf Text3.Text = "" Or Text7.Text = "" Then
-        MsgBox "select some data"
+        MsgBox "Select Some Datas", vbInformation, "Select Field"
         
     Else
         If Text6.Text = "" Then
-            MsgBox "Enter Registered User"
+            MsgBox "Enter Registered User", vbInformation, "Empty Field"
+            Text6.SetFocus
+            Exit Sub
         ElseIf rs.EOF Then
-            MsgBox "Registered user doesnt match"
+            MsgBox "Registered user doesnt match", vbExclamation, "LBM"
+            Text6.SetFocus
+            Exit Sub
+        
         Else
             
             rd = Date + 15
             cn.Execute ("insert into Borrow values('" & Text1.Text & "','" & Text3.Text & "','" & Text7.Text & "','" & Text8.Text & "','" & Text5.Text & "','" & rd & "','" & Text6.Text & "')")
-            MsgBox "Book issued return within  " & rd & "  after that fine will be added"
-            cn.Execute ("update Books set Available_Copies=Available_Copies-1 where ISBN='" & Text1.Text & "' ")
+            MsgBox "Book issued return within  " & rd & "  after that fine will be added", vbInformation, "LBM"
+            Dim n As String
+            n = "NO"
+            If DataGrid1.Columns(7).Value = 1 Then
+                cn.Execute ("update Books set Available_Copies=Available_Copies-1,Availablity='" & n & "' where ISBN='" & Text1.Text & "' ")
+            Else
+                cn.Execute ("update Books set Available_Copies=Available_Copies-1 where ISBN='" & Text1.Text & "' ")
+            End If
             Call Command3_Click
+            DataGrid1.Refresh
+            DataGrid2.Refresh
+                        
         End If
         
     End If
-        
-    
+    Call Command3_Click
+    Call Form_Load
 End Sub
 
 Private Sub Command2_Click()
@@ -749,11 +835,12 @@ Private Sub Command2_Click()
     mainWindow.Show
 End Sub
 
-Private Sub Command3_Click()
+Public Sub Command3_Click()
+   
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.OLEDB.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     Set rs1 = New ADODB.Recordset
@@ -761,8 +848,16 @@ Private Sub Command3_Click()
     rs.CursorLocation = adUseClient
     rs.Open "select * from Books order by ISBN", cn, adOpenDynamic, adLockPessimistic
     rs1.Open "select * from Std order by ID", cn, adOpenDynamic, adLockPessimistic
+    
+    
+    
+    
+    DataGrid1.Refresh
+    DataGrid2.Refresh
     Set DataGrid1.DataSource = rs
     Set DataGrid2.DataSource = rs1
+    
+    
     DataGrid1.Refresh
     DataGrid2.Refresh
     
@@ -775,13 +870,59 @@ Private Sub Command3_Click()
     Text8.Text = ""
     Text9.Text = ""
     Text10.Text = ""
+    Text2.Text = "Search by NAME"
+    Text11.Text = "Search by ID"
     
+   
+    
+      
+End Sub
+
+Private Sub Command4_Click()
+    
+    If Text2.Text = "" Then
+        MsgBox "Search string empty", vbExclamation, "errorrrr"
+        Text2.Text = "Search by Name"
+        Exit Sub
+    Else
+        Set rs = New ADODB.Recordset
+        rs.CursorLocation = adUseClient
+        DataGrid1.Refresh
+        rs.Open "select * from Books where Title like  '" & Text2.Text & "%'", cn, adOpenDynamic, adLockPessimistic
+            
+        If rs.EOF Then
+            MsgBox "Book not found", vbCritical, "Not Found"
+        Else
+            Set DataGrid1.DataSource = rs
+        End If
+    End If
+        
+End Sub
+
+Private Sub Command5_Click()
+    
+    If Text11.Text = "" Then
+        MsgBox "Search string empty", vbExclamation, "errorrrr"
+        Text11.Text = "Search by ID"
+        Exit Sub
+    Else
+        Set rs = New ADODB.Recordset
+        rs.CursorLocation = adUseClient
+        DataGrid2.Refresh
+        rs.Open "select * from Std where ID like  '" & Text11.Text & "%'", cn, adOpenDynamic, adLockPessimistic
+            
+        If rs.EOF Then
+            MsgBox "Book not found", vbCritical, "Not Found"
+        Else
+            Set DataGrid2.DataSource = rs
+        End If
+    End If
     
 End Sub
 
 Private Sub DataGrid1_selchange(Cancel As Integer)
     If rs.RecordCount = 0 Then
-        MsgBox ("empty BOOKS")
+        MsgBox "Empty BOOKS", vbInformation, "LBM"
         Exit Sub
         borrowBk.Show
     Else
@@ -790,14 +931,28 @@ Private Sub DataGrid1_selchange(Cancel As Integer)
         Text4.Text = DataGrid1.Columns(8)
         Text5.Text = Date
     End If
+    
+   
 End Sub
 
 
 Private Sub DataGrid2_SelChange(Cancel As Integer)
-    If rs.RecordCount = 0 Then
-        MsgBox ("empty BOOKS")
+   Set rs3 = cn.Execute("select * from Borrow")
+    While Not rs3.EOF
+        If rs3.Fields(0).Value = Text1.Text And rs3.Fields(2).Value = DataGrid2.Columns(0) Then
+            MsgBox "One book is already with student"
+            Exit Sub
+        Else
+        rs3.MoveNext
+        End If
+    Wend
+    
+    
+    If rs1.RecordCount = 0 Then
+        MsgBox "Empty STUDENTS", vbInformation, "LBM"
         Exit Sub
         borrowBk.Show
+          
     Else
         Text7.Text = DataGrid2.Columns(0)
         Text8.Text = DataGrid2.Columns(1)
@@ -808,27 +963,41 @@ End Sub
 
 Private Sub Form_Load()
     
-    Me.Icon = LoadPicture(App.Path & "\images\lbm_ico.ico")
+    Me.Icon = LoadPicture(App.path & "\images\lbm_ico.ico")
     
        
     
     Set cn = New ADODB.Connection
     cn.Provider = "microsoft.jet.OLEDB.4.0"
-    cn.Open App.Path & "\dbase\dBase.mdb"
+    cn.Open App.path & "\dbase\dBase.mdb"
     
     Set rs = New ADODB.Recordset
     Set rs1 = New ADODB.Recordset
-    rs1.CursorLocation = adUseClient
+    Set rs2 = New ADODB.Recordset
     rs.CursorLocation = adUseClient
+    rs1.CursorLocation = adUseClient
+    rs2.CursorLocation = adUseClient
     rs.Open "select * from Books order by ISBN", cn, adOpenDynamic, adLockPessimistic
     rs1.Open "select * from Std order by ID", cn, adOpenDynamic, adLockPessimistic
+    rs2.Open "select * from Borrow", cn, adOpenDynamic, adLockPessimistic
     Set DataGrid1.DataSource = rs
     Set DataGrid2.DataSource = rs1
     DataGrid1.Refresh
     DataGrid2.Refresh
+    
 
+   
 End Sub
 
+
+
+Private Sub Text11_Click()
+    Text11.Text = ""
+End Sub
+
+Private Sub Text2_Click()
+    Text2.Text = ""
+End Sub
 
 Private Sub Timer1_Timer()
     Text1brw = Time

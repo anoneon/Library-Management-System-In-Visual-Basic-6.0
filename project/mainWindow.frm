@@ -33,7 +33,7 @@ Begin VB.Form mainWindow
       Alignment       =   2  'Center
       Enabled         =   0   'False
       Height          =   690
-      Left            =   8040
+      Left            =   8160
       TabIndex        =   4
       Top             =   720
       Width           =   735
@@ -57,7 +57,7 @@ Begin VB.Form mainWindow
       Left            =   10680
       Top             =   2640
    End
-   Begin Project1.AutoResize Resize 
+   Begin LBMSuansu.AutoResize Resize 
       Left            =   10680
       Tag             =   "NO"
       Top             =   1800
@@ -155,16 +155,18 @@ Begin VB.Form mainWindow
    Begin VB.Label Label2 
       Alignment       =   2  'Center
       BackColor       =   &H000000FF&
+      BackStyle       =   0  'Transparent
       Caption         =   "Unavailable"
       BeginProperty Font 
          Name            =   "Microsoft Sans Serif"
-         Size            =   14.25
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   495
       Left            =   9360
       TabIndex        =   3
@@ -174,21 +176,23 @@ Begin VB.Form mainWindow
    Begin VB.Label Label1 
       Alignment       =   2  'Center
       BackColor       =   &H00C00000&
-      Caption         =   "Total"
+      BackStyle       =   0  'Transparent
+      Caption         =   "Total Books"
       BeginProperty Font 
          Name            =   "MS Reference Sans Serif"
-         Size            =   14.25
+         Size            =   15.75
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
+      ForeColor       =   &H00FFFFFF&
       Height          =   495
-      Left            =   7560
+      Left            =   7440
       TabIndex        =   2
       Top             =   120
-      Width           =   1575
+      Width           =   2175
    End
    Begin VB.Label Label1main 
       Alignment       =   2  'Center
@@ -280,7 +284,7 @@ Dim ct As Integer
 Option Explicit
 
 Private Declare Function GetMenu Lib "user32" _
-   (ByVal hwnd As Long) As Long
+   (ByVal hWnd As Long) As Long
 
 Private Declare Function GetSubMenu Lib "user32" _
    (ByVal hMenu As Long, ByVal nPos As Long) As Long
@@ -294,7 +298,7 @@ Const MF_BYPOSITION = &H400&
 
 
 Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" ( _
-     ByVal hwnd As Long, _
+     ByVal hWnd As Long, _
      ByVal lpOperation As String, _
      ByVal lpFile As String, _
      ByVal lpParameters As String, _
@@ -343,7 +347,7 @@ Dim hMenu As Long
 Dim hSubMenu As Long
 Dim Ret As Long
      'Get main menu ID
-     hMenu = GetMenu(hwnd)
+     hMenu = GetMenu(hWnd)
      
      
      '
@@ -392,10 +396,10 @@ Dim Ret As Long
 End Sub
 
 Sub chu()
+    Dim t
     
-   MsgBox ("See You Again...")
-   Timer1.Enabled = True
-    
+   t = MsgBox("See You Again...", vbOKOnly + vbMsgBoxRight, "©2018 Suansu")
+      Timer1.Enabled = True
 End Sub
 
 
@@ -498,7 +502,6 @@ End Sub
 Private Sub Timer1_Timer()
 
 ProgressBar1.Enabled = True
-
 ProgressBar1.Value = ProgressBar1.Value + 10
 If ProgressBar1.Value = ProgressBar1.Max Then
 Unload Me
