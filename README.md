@@ -1,2 +1,3 @@
 # VBLmgt
-library management
+graduation project
+library management system
