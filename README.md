@@ -1,13 +1,13 @@
-# VBLmgt
-graduation project
+# Library-Management-System-In-Visual-Basic-6.0
+## Graduation-End-Year-Project
 
 Library Management System
 
-software used : visual basic 6.0
+Software used : visual basic 6.0
 
-programming : visual basic
+Programming : visual basic
 
-backend/database : MS Access
+Backend/Database : MS Access
 
 
 
