@@ -3,11 +3,10 @@
 
 Library Management System
 
-Software used : visual basic 6.0
+Platform used : Window 7 ultimate x64
+
+IDE/Software used : Visual Studio 6 (visual basic 6.0)
 
 Programming : visual basic
 
 Backend/Database : MS Access
-
-
-
